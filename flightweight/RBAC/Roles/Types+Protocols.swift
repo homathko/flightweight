@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 enum RoleType: String {
     case NEW_USER
@@ -39,13 +40,12 @@ enum RoleType: String {
     }
 }
 
-protocol UnderscoreIdentifiable {
-    associatedtype ID: Hashable
-    var _id: ID { get }
+protocol UnderscoreIdentifiable: Identifiable {
+    var _id: ObjectId { get }
 }
 
 extension Identifiable where Self : UnderscoreIdentifiable {
-    var id: ID {
-        _id
+    var id: String {
+        _id.stringValue
     }
 }

@@ -24,4 +24,9 @@ class flightweightTests: XCTestCase {
         print(target.path.encoded)
     }
 
+    func testObjectId() throws {
+        let role = Role()
+        let target = DataTarget<Role>(domain: .user("12345"), location: .user, id: role.id)
+    }
+
 }

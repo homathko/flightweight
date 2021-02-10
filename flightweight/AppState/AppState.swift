@@ -20,7 +20,7 @@ class AppState: ObservableObject {
     var app: RealmSwift.App
     var userToken: NSKeyValueObservation? = nil
     @Published var authState = AuthStateController()
-    var roleController: RoleController! = nil
+    var roleController: RoleCoordinator! = nil
 
     @Published var error: Error? = nil
 
@@ -31,7 +31,7 @@ class AppState: ObservableObject {
         app = .init(id: "login-flow-jjfpx")
         /// Simulate having an ongoing system coordinator
         /// It has to handle having no currentUser, changes in auth level
-        roleController = RoleController(appState: self)
+        roleController = RoleCoordinator(appState: self)
         /// Listen for changes to the roles, as they will affect what
         /// actions are available in the UI
         roleController.$roles.receive(on: DispatchQueue.main).sink { roles in

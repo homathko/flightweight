@@ -14,6 +14,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     let appState = AppState()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        let role = Role()
+        let target = DataTarget<Role>(domain: .user("12345"), location: .user, id: role.id)
         return true
     }
 }

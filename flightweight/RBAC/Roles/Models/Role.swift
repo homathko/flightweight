@@ -6,7 +6,7 @@
 import Foundation.NSObjCRuntime
 import RealmSwift
 
-class Role: Object, Identifiable {
+class Role: Object, UnderscoreIdentifiable {
     @objc dynamic var _id = ObjectId.generate()
     @objc dynamic var user_id: String = ""
     @objc dynamic var name: String = "" /// i.e. NEW_USER, REGISTERED_USER, FOLLOWER, PILOT, ASSET_OWNER

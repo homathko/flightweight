@@ -19,6 +19,10 @@ struct DataTarget<T: Object> {
         self.path = path
         self.currentUser = currentUser
     }
+
+    func configuration () -> Realm.Configuration {
+        currentUser.configuration(partitionValue: path.partitionValue)
+    }
 }
 
 extension DataTarget {
@@ -30,14 +34,14 @@ extension DataTarget {
             _ currentUser: User
     ) {
         self.init(path:
-            DataTargetPath(
-                    service: .Sync,
-                    domain: domain.refKey(),
-                    location: location.refKey(),
-                    objectType: T().typeString,
-                    query: nil,
-                    id: nil
-            ), currentUser
+        DataTargetPath(
+                service: .Sync,
+                domain: domain.refKey(),
+                location: location.refKey(),
+                objectType: T().typeString,
+                query: nil,
+                id: nil
+        ), currentUser
         )
     }
 
@@ -49,22 +53,25 @@ extension DataTarget {
             _ currentUser: User
     ) {
         self.init(path:
-            DataTargetPath(
-                    service: .Sync,
-                    domain: domain.refKey(),
-                    location: location.refKey(),
-                    objectType: T().typeString,
-                    query: query,
-                    id: nil
-            ), currentUser
+        DataTargetPath(
+                service: .Sync,
+                domain: domain.refKey(),
+                location: location.refKey(),
+                objectType: T().typeString,
+                query: query,
+                id: nil
+        ), currentUser
         )
     }
+}
+
+extension DataTarget where T : UnderscoreIdentifiable {
 
     /// Targets one known entity at the location
     init (
             domain: Constants.Paths.DomainPathComponent.Realm,
             location: Constants.Paths.LocationPathComponent.RealmDatabase,
-            id: String,
+            id: T.ID,
             _ currentUser: User
     ) {
         self.init(path:
@@ -74,7 +81,7 @@ extension DataTarget {
                     location: location.refKey(),
                     objectType: T().typeString,
                     query: nil,
-                    id: id
+                    id: id!
             ), currentUser
         )
     }

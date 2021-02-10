@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1012D4D525CDCB2000B8340A /* DataTargetPathCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012D4C625CDCB1F00B8340A /* DataTargetPathCoding.swift */; };
 		1012D4D625CDCB2000B8340A /* DataTargetPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012D4C725CDCB1F00B8340A /* DataTargetPath.swift */; };
 		1012D4D725CDCB2000B8340A /* DataTargetPathStringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012D4C825CDCB1F00B8340A /* DataTargetPathStringConstants.swift */; };
 		1012D4D825CDCB2000B8340A /* DataTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012D4C925CDCB1F00B8340A /* DataTarget.swift */; };
@@ -15,22 +14,19 @@
 		1012D4DB25CDCB2000B8340A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012D4CC25CDCB2000B8340A /* ContentView.swift */; };
 		1012D4DD25CDCB2000B8340A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012D4CE25CDCB2000B8340A /* AppState.swift */; };
 		1012D4E125CDCB2000B8340A /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1012D4D425CDCB2000B8340A /* Actions.swift */; };
-		105A654725D2101B00A16E61 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 105D8C0725CDC94C00440654 /* Realm */; };
-		105A654825D2101B00A16E61 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 105D8C0925CDC94C00440654 /* RealmSwift */; };
 		105D8BDA25CDC90700440654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105D8BD925CDC90700440654 /* Assets.xcassets */; };
 		105D8BDD25CDC90700440654 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105D8BDC25CDC90700440654 /* Preview Assets.xcassets */; };
 		105D8BE825CDC90800440654 /* flightweightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D8BE725CDC90800440654 /* flightweightTests.swift */; };
 		105D8BF325CDC90800440654 /* flightweightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D8BF225CDC90800440654 /* flightweightUITests.swift */; };
+		B27CA0BA1FA5101402490A40 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA67E0D75203DF4F07B19 /* Interactor.swift */; };
 		B27CA16EC3AB6B79E32E8F10 /* Types+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA3C4EE69C34E7522735E /* Types+Protocols.swift */; };
 		B27CA37C9A19AD7A6A82B1DD /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA1CAB9B99FB16309A30E /* AuthState.swift */; };
 		B27CA3B1E60B8A98D0138D6E /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA58FF960C35A3346C95A /* Role.swift */; };
-		B27CA59B721631FA9B4EA209 /* RoleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA1A4D4A3EC77FF53E8FC /* RoleController.swift */; };
+		B27CA53032B72740AA37D492 /* Interactor.Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA939BD6815A0A18DC610 /* Interactor.Publisher.swift */; };
 		B27CA714E83BB4962FEB87B9 /* User.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CAE8B5AFABA8AB4D381AD /* User.extension.swift */; };
 		B27CA76F09041B71C7F244D2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA4B5148FFC5B18D62FA4 /* Coordinator.swift */; };
 		B27CAA014A0F0CA4DAC76722 /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA8E6A05D936509A06184 /* Policy.swift */; };
-		B27CAD39B50246D832A6C4F8 /* RoleController.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA04E19EE9FDAF0353717 /* RoleController.extension.swift */; };
-		B27CADD3397C0CB8072E98EE /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CABE7B07BE81EAE96DABE /* Interactor.swift */; };
-		B27CAEFB93A5CDD48049609D /* RoleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CA9BC8E6E2A849FBCBB5D /* RoleCoordinator.swift */; };
+		B27CACE0146E0113D75E628E /* RoleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27CAF94A54624E09F8EAC89 /* RoleCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1012D4C625CDCB1F00B8340A /* DataTargetPathCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTargetPathCoding.swift; sourceTree = "<group>"; };
 		1012D4C725CDCB1F00B8340A /* DataTargetPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTargetPath.swift; sourceTree = "<group>"; };
 		1012D4C825CDCB1F00B8340A /* DataTargetPathStringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTargetPathStringConstants.swift; sourceTree = "<group>"; };
 		1012D4C925CDCB1F00B8340A /* DataTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTarget.swift; sourceTree = "<group>"; };
@@ -69,16 +64,15 @@
 		105D8BEE25CDC90800440654 /* flightweightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flightweightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105D8BF225CDC90800440654 /* flightweightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flightweightUITests.swift; sourceTree = "<group>"; };
 		105D8BF425CDC90800440654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B27CA04E19EE9FDAF0353717 /* RoleController.extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleController.extension.swift; sourceTree = "<group>"; };
-		B27CA1A4D4A3EC77FF53E8FC /* RoleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleController.swift; sourceTree = "<group>"; };
 		B27CA1CAB9B99FB16309A30E /* AuthState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		B27CA3C4EE69C34E7522735E /* Types+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Types+Protocols.swift"; sourceTree = "<group>"; };
 		B27CA4B5148FFC5B18D62FA4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B27CA58FF960C35A3346C95A /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		B27CA67E0D75203DF4F07B19 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		B27CA8E6A05D936509A06184 /* Policy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Policy.swift; sourceTree = "<group>"; };
-		B27CA9BC8E6E2A849FBCBB5D /* RoleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleCoordinator.swift; sourceTree = "<group>"; };
-		B27CABE7B07BE81EAE96DABE /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		B27CA939BD6815A0A18DC610 /* Interactor.Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.Publisher.swift; sourceTree = "<group>"; };
 		B27CAE8B5AFABA8AB4D381AD /* User.extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.extension.swift; sourceTree = "<group>"; };
+		B27CAF94A54624E09F8EAC89 /* RoleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				105A654825D2101B00A16E61 /* RealmSwift in Frameworks */,
-				105A654725D2101B00A16E61 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +103,6 @@
 		1012D4C525CDCB1F00B8340A /* DataTarget */ = {
 			isa = PBXGroup;
 			children = (
-				1012D4C625CDCB1F00B8340A /* DataTargetPathCoding.swift */,
 				1012D4C725CDCB1F00B8340A /* DataTargetPath.swift */,
 				1012D4C825CDCB1F00B8340A /* DataTargetPathStringConstants.swift */,
 				1012D4C925CDCB1F00B8340A /* DataTarget.swift */,
@@ -132,10 +123,9 @@
 		1012D4D125CDCB2000B8340A /* Roles */ = {
 			isa = PBXGroup;
 			children = (
-				B27CA04E19EE9FDAF0353717 /* RoleController.extension.swift */,
-				B27CA1A4D4A3EC77FF53E8FC /* RoleController.swift */,
 				B27CA3C4EE69C34E7522735E /* Types+Protocols.swift */,
 				B27CA8338F325E6B57D86795 /* Models */,
+				B27CAF94A54624E09F8EAC89 /* RoleCoordinator.swift */,
 			);
 			path = Roles;
 			sourceTree = "<group>";
@@ -153,8 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				B27CAC5FFC33ED9DD96E7D8F /* Coordinator */,
-				B27CABE7B07BE81EAE96DABE /* Interactor.swift */,
 				1012D4C525CDCB1F00B8340A /* DataTarget */,
+				B27CA9D2C71DA83DD93EC38C /* Interactor */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -237,6 +227,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		B27CA9D2C71DA83DD93EC38C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B27CA67E0D75203DF4F07B19 /* Interactor.swift */,
+				B27CA939BD6815A0A18DC610 /* Interactor.Publisher.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		B27CAA131E1083F2E928998F /* AuthState */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				B27CA4B5148FFC5B18D62FA4 /* Coordinator.swift */,
-				B27CA9BC8E6E2A849FBCBB5D /* RoleCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -271,8 +269,8 @@
 			);
 			name = flightweight;
 			packageProductDependencies = (
-				105D8C0725CDC94C00440654 /* Realm */,
-				105D8C0925CDC94C00440654 /* RealmSwift */,
+				105D8C0725CDC94C00440654,
+				105D8C0925CDC94C00440654,
 			);
 			productName = flightweight;
 			productReference = 105D8BD225CDC90700440654 /* flightweight.app */;
@@ -347,7 +345,7 @@
 			);
 			mainGroup = 105D8BC925CDC90700440654;
 			packageReferences = (
-				105D8C0625CDC94C00440654 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				105D8C0625CDC94C00440654,
 			);
 			productRefGroup = 105D8BD325CDC90700440654 /* Products */;
 			projectDirPath = "";
@@ -396,19 +394,17 @@
 				1012D4DB25CDCB2000B8340A /* ContentView.swift in Sources */,
 				1012D4E125CDCB2000B8340A /* Actions.swift in Sources */,
 				1012D4DD25CDCB2000B8340A /* AppState.swift in Sources */,
-				1012D4D525CDCB2000B8340A /* DataTargetPathCoding.swift in Sources */,
 				1012D4D625CDCB2000B8340A /* DataTargetPath.swift in Sources */,
 				1012D4D725CDCB2000B8340A /* DataTargetPathStringConstants.swift in Sources */,
-				B27CADD3397C0CB8072E98EE /* Interactor.swift in Sources */,
 				B27CA76F09041B71C7F244D2 /* Coordinator.swift in Sources */,
-				B27CAEFB93A5CDD48049609D /* RoleCoordinator.swift in Sources */,
 				B27CA37C9A19AD7A6A82B1DD /* AuthState.swift in Sources */,
-				B27CAD39B50246D832A6C4F8 /* RoleController.extension.swift in Sources */,
-				B27CA59B721631FA9B4EA209 /* RoleController.swift in Sources */,
 				B27CA714E83BB4962FEB87B9 /* User.extension.swift in Sources */,
 				B27CA16EC3AB6B79E32E8F10 /* Types+Protocols.swift in Sources */,
 				B27CAA014A0F0CA4DAC76722 /* Policy.swift in Sources */,
 				B27CA3B1E60B8A98D0138D6E /* Role.swift in Sources */,
+				B27CACE0146E0113D75E628E /* RoleCoordinator.swift in Sources */,
+				B27CA0BA1FA5101402490A40 /* Interactor.swift in Sources */,
+				B27CA53032B72740AA37D492 /* Interactor.Publisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +729,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		105D8C0625CDC94C00440654 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+		105D8C0625CDC94C00440654 = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
@@ -744,14 +740,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		105D8C0725CDC94C00440654 /* Realm */ = {
+		105D8C0725CDC94C00440654 = {
 			isa = XCSwiftPackageProductDependency;
-			package = 105D8C0625CDC94C00440654 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 105D8C0625CDC94C00440654;
 			productName = Realm;
 		};
-		105D8C0925CDC94C00440654 /* RealmSwift */ = {
+		105D8C0925CDC94C00440654 = {
 			isa = XCSwiftPackageProductDependency;
-			package = 105D8C0625CDC94C00440654 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 105D8C0625CDC94C00440654;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
