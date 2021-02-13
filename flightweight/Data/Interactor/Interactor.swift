@@ -17,7 +17,7 @@ enum DataError: Error {
 struct Interactor<T: Object> {
     private var target: DataTarget<T>
     var resultPublisher = CurrentValueSubject<T?, Never>(nil)
-    var resultsPublisher = CurrentValueSubject<[T]?, Never>(nil)
+    var resultsPublisher = CurrentValueSubject<[T], Never>([])
 
     init (_ target: DataTarget<T>) {
         self.target = target
@@ -45,8 +45,8 @@ struct Interactor<T: Object> {
 
     func collection (query: NSPredicate?) -> AnyPublisher<[T], DataError> {
         results(query)
-            .map { results -> CurrentValueSubject<[T]?, Never> in
-                resultsPublisher
+            .map { results -> CurrentValueSubject<[T], DataError> in
+                CurrentValueSubject<[T], DataError>(Array(results))
             }.eraseToAnyPublisher()
     }
 

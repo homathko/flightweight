@@ -112,7 +112,6 @@ extension RoleCoordinator {
 //                .compactMap { optional -> Role? in
 //                    optional
 //                }.eraseToAnyPublisher()
-                .destroy()
 
         try! realm.write {
             let destroyed = realm.objects(Role.self).filter {

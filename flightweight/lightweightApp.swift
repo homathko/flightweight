@@ -15,7 +15,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         let role = Role()
-        let target = DataTarget<Role>(domain: .user("12345"), location: .user, id: role.id)
+
+        if let user = appState.app.currentUser {
+            let target = DataTarget<Role>(domain: .user("12345"), location: .user, id: role.id, user)
+        } else {
+            appState.LOGIN_WITH_EMAIL_CREDENTIALS(email: "a@a.ca", pwd: "pqpqpq") {
+                guard let user = self.appState.app.currentUser else {
+                    fatalError("")
+                }
+
+                self.appState.authState.login(authenticatedUser: user)
+            }
+        }
         return true
     }
 }

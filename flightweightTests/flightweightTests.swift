@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import flightweight
+import Combine
 
 class flightweightTests: XCTestCase {
     let app = AppState()
@@ -25,8 +26,22 @@ class flightweightTests: XCTestCase {
     }
 
     func testObjectId() throws {
-        let role = Role()
-        let target = DataTarget<Role>(domain: .user("12345"), location: .user, id: role.id)
+        let role = Role().id
+        let target = DataTarget<Role>(domain: .user("12345"), location: .user, id: role.id, app.authenticatdUser()!)
     }
 
+    func testFuture () throws {
+        let cancellable = Future<Void, Error> { promise in
+            delayedOneShotBlock(s: 1) {
+                promise(.success(()))
+            }
+        }
+    }
+}
+
+func delayedOneShotBlock (s: TimeInterval, completion: @escaping () -> ()) {
+    Timer.scheduledTimer(withTimeInterval: s, repeats: false) { timer in
+        timer.invalidate()
+        completion()
+    }
 }

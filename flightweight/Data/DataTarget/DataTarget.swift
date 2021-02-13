@@ -71,7 +71,7 @@ extension DataTarget where T : UnderscoreIdentifiable {
     init (
             domain: Constants.Paths.DomainPathComponent.Realm,
             location: Constants.Paths.LocationPathComponent.RealmDatabase,
-            id: T.ID,
+            id: String,
             _ currentUser: User
     ) {
         self.init(path:
@@ -81,7 +81,7 @@ extension DataTarget where T : UnderscoreIdentifiable {
                     location: location.refKey(),
                     objectType: T().typeString,
                     query: nil,
-                    id: id!
+                    id: id
             ), currentUser
         )
     }
