@@ -156,7 +156,7 @@ extension AppState {
         print("\(user.identities.map { $0.providerType })")
     }
 
-    func authenticatdUser () -> User? {
+    func authenticatedUser () -> User? {
         if case .authenticated(let user) = authState.state {
             return user
         } else {

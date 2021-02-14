@@ -15,12 +15,17 @@ enum DataError: Error {
 }
 
 struct Interactor<T: Object> {
-    private var target: DataTarget<T>
-    var resultPublisher = CurrentValueSubject<T?, Never>(nil)
-    var resultsPublisher = CurrentValueSubject<[T], Never>([])
+    internal var target: DataTarget<T>
+    internal var cancellables = Set<AnyCancellable>()
 
     init (_ target: DataTarget<T>) {
         self.target = target
+    }
+    
+    internal func connect () -> Publishers.AssertNoFailure<RealmPublishers.AsyncOpenPublisher> {
+        Realm
+            .asyncOpen(configuration: target.configuration())
+            .assertNoFailure()
     }
 
     private func results (_ query: NSPredicate? = nil) ->
@@ -45,7 +50,7 @@ struct Interactor<T: Object> {
 
     func collection (query: NSPredicate?) -> AnyPublisher<[T], DataError> {
         results(query)
-            .map { results -> CurrentValueSubject<[T], DataError> in
+            .flatMap { results -> CurrentValueSubject<[T], DataError> in
                 CurrentValueSubject<[T], DataError>(Array(results))
             }.eraseToAnyPublisher()
     }
@@ -95,19 +100,5 @@ extension Interactor where T: Identifiable {
         } else {
             fatalError("Provided non-frozen object to update(withFrozenObject:)")
         }
-    }
-}
-
-extension AnyPublisher where Output == Object?, Failure == DataError {
-    func destroy() -> Publishers.HandleEvents<Self> {
-        handleEvents(receiveOutput: { (object: Output?) -> () in
-            if let object = object {
-                if let realm = object?.realm {
-                    try! realm.write {
-                        realm.delete(object!)
-                    }
-                }
-            }
-        })
     }
 }
